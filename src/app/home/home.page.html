@@ -1,0 +1,110 @@
+<ion-header >
+  <ion-item lines="none">
+
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+  
+    <ion-avatar slot="end">
+      <img src="assets/icons/4.png" />
+    </ion-avatar>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  
+  
+  
+  <div class="main-header"></div>
+  
+
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col size="6" class="ion-text-start">
+        <ion-button color="light" size="small">
+          <ion-text color="primary">Top Up</ion-text>
+          <ion-icon name="add" color="primary" slot="end"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-end">
+        <ion-button color="light" size="small">
+          <ion-text color="primary">Top Up</ion-text>
+          <ion-icon name="add" color="primary" slot="end"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-horizontal ion-margin-top">
+      <ion-col>
+        <ion-label color="light">
+          <b>EVALUATION</b>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col *ngFor="let item of list" size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail [style.background]="item?.background">
+                <img src={{img}}{{item.matiere.id}} alt="img" />
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row class="con">
+            <ion-label color="dark">{{item.matiere.nom_matiere}}</ion-label>
+            <p class="card-category"  *ngIf="item.niveau==='Faible'" style="color: black; font-weight: bold;"><img title="ACTIVER" src="./assets/images/faible.png" width="10px" alt=""></p>
+            <p class="card-category"  *ngIf="item.niveau==='Moyen'" style="color: black; font-weight: bold;"><img title="ACTIVER" src="./assets/images/moyen.png" width="10px" alt=""></p>
+            <p class="card-category"  *ngIf="item.niveau==='Avancé'" style="color: black; font-weight: bold;"><img title="ACTIVER" src="./assets/images/avance.png" width="10px" alt=""></p>
+          </ion-row> 
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>BRIEF RECENT</ion-label>
+      </ion-list-header>
+      <div class="event-slider" >
+        <ion-slides  [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+          <ion-slide *ngFor="let item of listBrief.slice(0, 3)">
+            <ion-col class="ion-text-left">
+              <ion-card >
+                <ion-card-header class="ion-no-padding">
+                  <img src={{img1}}{{item.id}} alt="img" style="height: 90px" />
+                </ion-card-header>
+    
+                <ion-card-content>
+                  <ion-row class="da">
+                  <p class="d">Date :</p>
+                  <p class="date">{{item.date}}</p>
+                </ion-row>
+                  <h2 class="eventname">{{item.type}}</h2>
+                  <ion-row class="da">
+                  <img  src="../../assets/persons/person4.svg" />
+                  <p class="location">{{item.formateur.prenom}} {{item.formateur.nom}}</p>
+                </ion-row>
+                  <div class="additional-info">
+                    <div class="attendees">
+                      <img  src={{img}}{{item.evaluation.matiere.id}} alt="img" style="width: 50px; display: block; margin: auto; border-radius: 50%; margin-bottom: 10px;"/>
+                      
+                      
+                    </div>
+                    <ion-row class="da">
+                    <p class="d">Rendu :</p>
+                    <p class="time" >{{item.dateRendu}}</p>
+                  </ion-row>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-slide>
+          
+        </ion-slides>
+      </div>
+    </ion-list>
+  </ion-grid>
+  
+</ion-content>

@@ -1,0 +1,53 @@
+  
+ion-content {
+    --background: #F99723;
+  }
+  
+    
+  .wave-container {
+    position: relative;
+    color: #FFF;
+    text-align: center;
+    overflow: hidden;
+  
+    background: #091d23;
+    
+    img {
+      margin-bottom: 2rem;
+      width: 200px;
+      display: block;
+      margin: auto;
+
+    }
+  
+  }
+  
+  .wave-container > svg {
+    display: block;
+  }
+  .ion-text-capitalize{
+    margin-top: 20px;
+    
+  }
+  .b{
+    color: white;
+  }
+  
+  h2 {
+    
+    margin: 2rem auto;
+  }
+  h4{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+  
+  ion-footer {
+    ion-toolbar {
+      --background: rgba(0,0,0,0);
+      ion-title {
+        font-size: 12px;
+      }
+    }
+  }
