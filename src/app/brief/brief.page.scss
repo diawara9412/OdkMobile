@@ -114,30 +114,41 @@ ion-header {
             ion-card-header {
               img {
                 width: 100%;
+                
               }
             }
   
             ion-card-content {
               padding-top: 13px;
-  
+              .d{
+                color: #F99723;
+               }
+               .da{
+                justify-content: space-between;
+               }
               .date {
                 color: #364F6B;
-                font-size: 10px;
+                font-size: 15px;
                 margin-bottom: 5px;
+                // font-weight: bold;
               }
-  
+              .time{
+                font-size: 12px;
+              }
               .eventname {
                 color: #364F6B;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: bold;
                 margin-bottom: 5px;
+                text-align: center;
+                margin-bottom: 9px;
               }
   
               .location {
                 display: flex;
                 align-items: center;
                 color: var(--ion-color-primary);
-                font-size: 10px;
+                font-size: 12px;
                 margin-bottom: 5px;
               }
             }
@@ -172,6 +183,7 @@ ion-header {
             margin-bottom: 5px;
             margin-top: 0px;
           }
+          
   
           .location {
             display: flex;
@@ -211,5 +223,6 @@ ion-header {
         }
       }
     }
-  }
+    }
+  
   

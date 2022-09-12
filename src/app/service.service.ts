@@ -21,4 +21,7 @@ export class ServiceService {
   ApprenantBrief(brief:any){
     return this.http.get(this.url +"findBriefByApprenant/"+ brief);
   }
+  BriefById(id:any){
+    return this.http.get(this.url +"briefById/"+ id);
+  }
 }

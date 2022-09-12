@@ -26,75 +26,46 @@
   </div>
 
   <div class="title">
-    <h2>Popular Events</h2>
+    <h2>Tout les Brief</h2>
 
-    <p>See all</p>
+    
   </div>
 
-  <div class="event-slider">
-    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card routerLink="/detail-brief">
+  <div class="event-slider" >
+    <ion-slides  [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+      <ion-slide *ngFor="let item of listBrief">
+        <ion-col class="ion-text-left" routerLink="/detail-brief/{{item.id}}">
+          <ion-card >
             <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event1.svg" />
+              <img src={{img1}}{{item.id}} alt="img" style="height: 90px" />
             </ion-card-header>
 
             <ion-card-content>
-              <p class="date">17th July, 2021</p>
-              <h2 class="eventname">International Jazz Festival</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Rendu</p>
-
+              <ion-row class="da">
+              <p class="d">Date :</p>
+              <p class="date">{{item.date}}</p>
+            </ion-row>
+              <h2 class="eventname">{{item.type}}</h2>
+              <ion-row class="da">
+              <img  src="../../assets/persons/person4.svg" />
+              <p class="location">{{item.formateur.prenom}} {{item.formateur.nom}}</p>
+            </ion-row>
               <div class="additional-info">
                 <div class="attendees">
-                  <img src="../../assets/persons/person1.svg" />
-                  <img src="../../assets/persons/person2.svg" />
-                  <img src="../../assets/persons/person3.svg" />
-                  <img src="../../assets/persons/person4.svg" />
-                  <div class="count">
-                    <img src="../../assets/persons/person-placeholder.svg" />
-
-                    <p>+7</p>
-                  </div>
+                  <img  src={{img}}{{item.evaluation.matiere.id}} alt="img" style="width: 50px; display: block; margin: auto; border-radius: 50%; margin-bottom: 10px;"/>
+                  
+                  
                 </div>
-
-                <p class="time">10:00pm</p>
+                <ion-row class="da">
+                <p class="d">Rendu :</p>
+                <p class="time" >{{item.dateRendu}}</p>
+              </ion-row>
               </div>
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-slide>
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
-            <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event2.svg" />
-            </ion-card-header>
-
-            <ion-card-content>
-              <p class="date">23th July, 2021</p>
-              <h2 class="eventname">Contemporary Dance</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
-
-              <div class="additional-info">
-                <div class="attendees">
-                  <img src="../../assets/persons/person1.svg" />
-                  <img src="../../assets/persons/person2.svg" />
-                  <img src="../../assets/persons/person3.svg" />
-                  <img src="../../assets/persons/person4.svg" />
-                  <div class="count">
-                    <img src="../../assets/persons/person-placeholder.svg" />
-
-                    <p>+3</p>
-                  </div>
-                </div>
-
-                <p class="time">10:00pm</p>
-              </div>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-slide>
+      
     </ion-slides>
   </div>
   <!-- <ion-list>

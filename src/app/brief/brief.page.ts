@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-brief',
@@ -6,8 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./brief.page.scss'],
 })
 export class BriefPage implements OnInit {
-
-  constructor() { }
+  loginData : any;
+  list :any;
+  img : any;
+  img1 : any;
+  listBrief :any;
+  listRendu : any;
+   constructor(private service : ServiceService) { }
+ 
+   ngOnInit(): void {
+     this.loginData=JSON.parse(localStorage["isLogin"]);
+    
+     this.BriefParId();
+    //  this.RenduByBrief();
+     this.img = this.service.Photo
+     this.img1 = this.service.PhotoBrief
+   }
   animationInProgress = false;
   features: any[] = [
     {id: 1, name: 'Top Up', src: 'assets/icons/top-up.png', background: 'rgba(27,150,181, 0.1)', page: ''},
@@ -20,7 +35,12 @@ export class BriefPage implements OnInit {
     {id: 1, vendor: 'Received from PhonePe', image: '', amount: 1500, time: '3:00PM'},
     {id: 2, vendor: 'Flaticons', image: '', amount: -1200, time: '4:00PM'}
   ];
-  ngOnInit() {
+  
+  BriefParId(){
+    this.service.ApprenantBrief(this.loginData.id).subscribe((data)=>{
+      console.log(data);
+      this.listBrief =data;
+    })
   }
 
 }

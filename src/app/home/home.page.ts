@@ -2,7 +2,7 @@
 import { AfterContentChecked, Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 
 import { ServiceService } from '../service.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
   img1 : any;
   listBrief :any;
   listRendu : any;
-   constructor(private service : ServiceService) { }
+   constructor(private service : ServiceService,private router: Router) { }
  
    ngOnInit(): void {
      this.loginData=JSON.parse(localStorage["isLogin"]);
@@ -60,4 +60,8 @@ export class HomePage implements OnInit {
   //    this.listRendu = data;
   //    })
   //  }
+  moi(){
+    location.replace("/rendu");
+    console.log("moi")
+  }
 }

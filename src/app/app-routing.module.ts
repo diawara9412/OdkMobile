@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./rendu/rendu.module').then( m => m.RenduPageModule)
   },
   {
-    path: 'detail-brief',
+    path: 'detail-brief/:id',
     loadChildren: () => import('./detail-brief/detail-brief.module').then( m => m.DetailBriefPageModule)
   },
   {
@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'ajour-res',
     loadChildren: () => import('./ajour-res/ajour-res.module').then( m => m.AjourResPageModule)
+  },
+  {
+    path: 'moi',
+    loadChildren: () => import('./moi/moi.module').then( m => m.MoiPageModule)
   },
   
 

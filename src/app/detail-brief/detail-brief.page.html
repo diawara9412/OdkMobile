@@ -1,72 +1,25 @@
 <ion-header>
   <ion-toolbar >
-  <ion-row>
+    <ion-menu-button   menu="main-menu"></ion-menu-button>
+  <!-- <ion-row>
     <ion-menu-button   menu="main-menu"></ion-menu-button>
   <ion-icon name="close" class="ion-float-right" routerLink="/brief"  ></ion-icon>
-</ion-row>
-
+</ion-row> -->
+<ion-title>moi</ion-title>
 </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true">
-  <ion-fab vertical="top" horizontal="center" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-    <!-- <ion-fab-list side="top">
-      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-    </ion-fab-list> -->
-    <!-- <ion-fab-list side="bottom">
-      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
-    </ion-fab-list> -->
-    <ion-fab-list side="start" routerLink="/rendu" >
-      <ion-fab-button><ion-icon class="bu" name="list-outline"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end" routerLink="/ajou-rendu" >
-      <ion-fab-button ><ion-icon class="bu" name="send-outline"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-  <div class="banner">
-    <img src="../../assets/Soustraction 1.png" />
   
-    <div class="caption ion-padding">
-      Gestion des apprenants
-    </div>
-  
-    <!-- <div class="search">
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Search events"></ion-input>
-        <ion-button slot='end'>
-          <img src="../../assets/filter.svg" />
-        </ion-button>
-      </ion-item>
-    </div> -->
-  </div>
-  
-  <ion-text>
-    
-     introduction : L’objectif est de faire une application qui va faire le suivi et assurer l'échange entre apprenants et formateurs pour le renforcement des capacités des apprenants en fonction des niveaux par rapport à des technologies ou langages vus ou étudié au sein de l’école du code
-     Motivation / intérêt
-     Vu le nombre important d'apprenants à Orange Digital Kalanso et vus et la pédagogie utilisée étant active. Les apprenant qui sont en retard de niveau par rapport aux apprenants auront du mal à suivre la formation étant donné qu’ils n’ont pas suivi la même formation à la base
-     Etant passionnés de la transformation digitale au sein de notre communauté, nous pensons mettre en place une application de suivi pour les apprenants en difficulté en vu de leurs aidé à faire face à la pédagogie utilisée qui est la pédagogie active
-     Etude de l’art et méthodologie
-     Solutions existantes et mode de fonctionnement en rapport avec le projet
-     Cependant comme solution existante, le formateur envoie des TP ou des brief via l’adresse mail de l’apprenant il n’y a pas de système automatisé de suivi du niveau de l’apprenant en difficulté. D’où l’idée de création d’une plateforme de suivi d’evaluation niveau et de sauvegarde de différent brief ou TP soumis à l'apprenant par le formateur
-     Méthodologie de projet et outils à utiliser en rapport avec le projet
-     La méthodologie de travail sera la méthode agile. La mise en place d’une application est composée de plusieurs activités prenant en compte les aspects d’organisation techniques et humains afin que le produit fini corresponde aux besoins du client. Besoins que ce dernier a préalablement définis à travers un cahier des charges ou une expression de besoin.
-     Analyse et conception
-    
-  </ion-text>
-
+<p>{{dataBrief.description}}</p>
 </ion-content>
 <ion-footer >
-  <ion-toolbar collapse="fade">
+  <ion-toolbar >
     
     <ion-row class="row">
   <h5 class="g"> Rendu le :</h5>
-  <h5 class="d" >20/10/2022</h5>
+  <h5 class="d" ></h5>
 </ion-row>
 </ion-toolbar>
 </ion-footer>
